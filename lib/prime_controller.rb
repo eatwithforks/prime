@@ -1,6 +1,6 @@
 class PrimeController
   class << self
-    def is_prime?(num)
+    def prime?(num)
       range = (2..Math.sqrt(num).floor).to_a
       result = range.detect { |i| (num / i.to_f) == (num / i).to_i }
       result.nil? ? true : false

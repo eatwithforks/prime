@@ -4,11 +4,11 @@ class PrimeUnitTest < Minitest::Test
   parallelize_me!
 
   def test_is_prime
-    assert PrimeController.is_prime?(3)
-    assert PrimeController.is_prime?(7)
-    assert PrimeController.is_prime?(997)
-    refute PrimeController.is_prime?(4)
-    refute PrimeController.is_prime?(16)
+    assert PrimeController.prime?(3)
+    assert PrimeController.prime?(7)
+    assert PrimeController.prime?(997)
+    refute PrimeController.prime?(4)
+    refute PrimeController.prime?(16)
   end
 
   def test_list_primes
