@@ -11,6 +11,12 @@ class PrimeUnitTest < Minitest::Test
     refute PrimeController.prime?(16)
   end
 
+  def test_bad_input
+    refute_equal Array, PrimeController.list_primes('foobar').class
+    refute_equal Array, PrimeController.list_primes(0).class
+    refute_equal Array, PrimeController.list_primes(-10).class
+  end
+
   def test_list_primes
     known_primes = [
       1, 2, 3, 5, 7, 11, 13, 17, 19,
@@ -24,7 +30,8 @@ class PrimeUnitTest < Minitest::Test
   end
 
   def test_create_table
-    primes = PrimeController.list_primes(10)
+    range = 10
+    primes = PrimeController.list_primes(range)
     table = PrimeController.create_table(primes)
     assert_equal range, table.size
   end
