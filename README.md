@@ -1,14 +1,17 @@
 Preface:
+
 Print out a prime number multiplication table.
 
 n is the number of prime numbers we want in the table.
 The program defaults to n = 10 (The first ten prime numbers) but can be modified and tested to another number.
 
 Ruby Prerequisites:
+
 1. Ruby 2.2.4
 2. Gems required - minitest
 
 Installation guide (On OSX):
+
 1. https://rvm.io/rvm/install
 2. rvm install 2.2.4
 3. rvm gemset create prime
@@ -16,10 +19,12 @@ Installation guide (On OSX):
 5. gem install minitest
 
 Program Usage:
+
 1. ruby prime_multiplication_table.rb
 
 
 Sample Output:
+
    1    2    3    5    7   11   13   17   19   23
    2    4    6   10   14   22   26   34   38   46
    3    6    9   15   21   33   39   51   57   69
