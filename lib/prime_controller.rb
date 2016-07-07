@@ -12,7 +12,7 @@ class PrimeController
       primes = []
       i = 1
       loop do
-        primes << i if PrimeController.is_prime?(i)
+        primes << i if PrimeController.prime?(i)
         i += 1
         break if primes.size.eql? range
       end
