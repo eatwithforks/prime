@@ -24,8 +24,7 @@ class PrimeUnitTest < Minitest::Test
   end
 
   def test_create_table
-    range = 10
-    primes = PrimeController.list_primes(range)
+    primes = PrimeController.list_primes(10)
     table = PrimeController.create_table(primes)
     assert_equal range, table.size
   end
