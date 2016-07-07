@@ -20,8 +20,8 @@ class PrimeController
       primes
     end
 
-    def multiply(prime_num, index_loc)
-      prime_num * index_loc
+    def multiply(prime_num, index_location)
+      prime_num * index_location
     end
 
     def index_size(primes)
