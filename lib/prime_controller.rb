@@ -40,5 +40,12 @@ class PrimeController
 
       table
     end
+
+    def print_formatted_table(table)
+      max_val = table.flatten.max
+      spacing_val = max_val.to_s.length + 1
+      format = "%#{spacing_val}s " * table.first.size
+      table.each { |row| puts format % row }
+    end
   end
 end
