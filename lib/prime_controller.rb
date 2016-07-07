@@ -8,6 +8,7 @@ class PrimeController
 
     def list_primes(range)
       return "#{range} is a #{range.class}. Expected Fixnum" unless range.class.eql? Fixnum
+      return "#{range} is not valid. Please enter a value greater than 0" unless range > 0
 
       primes = []
       i = 1
