@@ -1,5 +1,4 @@
 require_relative 'lib/prime_controller.rb'
-require 'pp'
 
 class PrimeMultiplication
   def main

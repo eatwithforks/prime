@@ -1,5 +1,3 @@
-require 'pp'
-
 class PrimeController
   class << self
     def prime?(num)
@@ -35,19 +33,15 @@ class PrimeController
     end
 
     def create_table(primes)
+      transposed = primes.zip(primes)
+      transposed.shift
       table = []
-      original = primes[0]
-      primes[0] = 1
-      primes.each do |prime_num|
-        row = []
-        PrimeController.index_size(primes).each do |i|
-          row << PrimeController.multiply(prime_num, primes.at(i))
-        end
-        table << row
+      transposed.each do |row|
+        temp = [row.first]
+        transposed.each { |col| temp << row.first * col.last }
+        table << temp
       end
-
-      table.first[0] = original
-      table
+      table.unshift(primes)
     end
 
     def print_formatted_table(table)
