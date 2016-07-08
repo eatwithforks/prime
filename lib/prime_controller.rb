@@ -36,14 +36,18 @@ class PrimeController
 
     def create_table(primes)
       table = []
-      row = []
-      pp primes
-      # primes.each do |prime_num|
-      #   # row = []
-      #   row << primes.at(1)
-      #   row << PrimeController.multiply(primes.at(1), prime_num)
-      # end
-      # pp row
+      original = primes[0]
+      primes[0] = 1
+      primes.each do |prime_num|
+        row = []
+        PrimeController.index_size(primes).each do |i|
+          row << PrimeController.multiply(prime_num, primes.at(i))
+        end
+        table << row
+      end
+
+      table.first[0] = original
+      table
     end
 
     def print_formatted_table(table)
