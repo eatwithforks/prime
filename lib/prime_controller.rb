@@ -1,6 +1,11 @@
+require 'pp'
+
 class PrimeController
   class << self
     def prime?(num)
+      return false unless num.class.eql? Fixnum
+      return false if (num <= 0) || (num.eql? 1)
+
       range = (2..Math.sqrt(num).floor).to_a
       result = range.detect { |i| (num / i.to_f) == (num / i).to_i }
       result.nil? ? true : false
@@ -31,15 +36,14 @@ class PrimeController
 
     def create_table(primes)
       table = []
-      primes.each do |prime_num|
-        row = []
-        PrimeController.index_size(primes).each do |i|
-          row << PrimeController.multiply(prime_num, primes.at(i))
-        end
-        table << row
-      end
-
-      table
+      row = []
+      pp primes
+      # primes.each do |prime_num|
+      #   # row = []
+      #   row << primes.at(1)
+      #   row << PrimeController.multiply(primes.at(1), prime_num)
+      # end
+      # pp row
     end
 
     def print_formatted_table(table)
