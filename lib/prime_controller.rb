@@ -1,5 +1,4 @@
 require 'pp'
-require 'parallel'
 
 class PrimeController
   class << self
@@ -32,8 +31,9 @@ class PrimeController
       transposed.shift
       table = []
       transposed.each do |row|
-        temp = [row.first]
-        transposed.each { |col| temp << row.first * col.last }
+        temp = [row[0]]
+        transposed.each { |col| temp << row[0] * col[0] }
+
         table << temp
       end
       table.unshift(primes)
@@ -42,7 +42,7 @@ class PrimeController
     def print_formatted_table(table)
       max_val = table.flatten.max
       spacing_val = max_val.to_s.length + 1
-      format = "%#{spacing_val}s " * table.first.size
+      format = "%#{spacing_val}s " * table[0].size
       table.each { |row| puts format % row }
     end
   end
