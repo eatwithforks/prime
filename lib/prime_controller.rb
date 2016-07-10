@@ -30,9 +30,9 @@ class PrimeController
       transposed = primes.zip(primes)
       transposed.shift
       table = []
-      transposed.each do |row|
-        temp = [row[0]]
-        transposed.each { |col| temp << row[0] * col[0] }
+      transposed.each do |row, _|
+        temp = [row]
+        transposed.each { |_, col| temp << row * col }
 
         table << temp
       end
