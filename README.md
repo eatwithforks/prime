@@ -25,6 +25,7 @@ Program Usage:
 
 
 Sample Output:
+Please enter a range: (10) for the first ten primes
 
    2    3    5    7   11   13   17   19   23   29
 
@@ -45,3 +46,9 @@ Sample Output:
   23   69  115  161  253  299  391  437  529  667
 
   29   87  145  203  319  377  493  551  667  841
+
+
+
+
+
+
