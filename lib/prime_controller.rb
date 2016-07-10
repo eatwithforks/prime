@@ -1,8 +1,11 @@
+require 'pp'
+require 'parallel'
+
 class PrimeController
   class << self
     def prime?(num)
       return false unless num.class.eql? Fixnum
-      return false if (num <= 0) || (num.eql? 1)
+      return false if num < 2
 
       range = (2..Math.sqrt(num).floor).to_a
       result = range.detect { |i| (num / i.to_f) == (num / i).to_i }
@@ -14,7 +17,7 @@ class PrimeController
       return "#{range} is not valid. Please enter a value greater than 0" unless range > 0
 
       primes = []
-      i = 1
+      i = 2
       loop do
         primes << i if PrimeController.prime?(i)
         i += 1
@@ -22,14 +25,6 @@ class PrimeController
       end
 
       primes
-    end
-
-    def multiply(prime_num, index_location)
-      prime_num * index_location
-    end
-
-    def index_size(primes)
-      (0..primes.size - 1).to_a
     end
 
     def create_table(primes)
