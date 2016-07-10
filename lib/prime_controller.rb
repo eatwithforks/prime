@@ -33,7 +33,6 @@ class PrimeController
       transposed.each do |row, _|
         temp = []
         transposed.each { |_, col| temp << row * col }
-
         table << [row, temp].flatten
       end
       table.unshift(primes)
