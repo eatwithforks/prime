@@ -1,3 +1,5 @@
+require 'pp'
+
 class PrimeController
   class << self
     def prime?(num)
@@ -29,10 +31,10 @@ class PrimeController
       transposed.shift
       table = []
       transposed.each do |row, _|
-        temp = [row]
+        temp = []
         transposed.each { |_, col| temp << row * col }
 
-        table << temp
+        table << [row, temp].flatten
       end
       table.unshift(primes)
     end
