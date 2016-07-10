@@ -26,6 +26,7 @@ Program Usage:
 
 Sample Output:
 Please enter a range: (10) for the first ten primes
+
 10
 
    2    3    5    7   11   13   17   19   23   29
