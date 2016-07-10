@@ -1,5 +1,3 @@
-require 'pp'
-
 class PrimeController
   class << self
     def prime?(num)
