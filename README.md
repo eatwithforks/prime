@@ -17,7 +17,6 @@ Installation guide (On OSX):
 3. rvm gemset create prime
 4. rvm gemset use prime
 5. gem install minitest
-6. gem install parallel
 
 Program Usage:
 
