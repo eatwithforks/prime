@@ -49,6 +49,18 @@ Please enter a range: (10) for the first ten primes
   29   87  145  203  319  377  493  551  667  841
 
 
+2. ruby prime_controller_test.rb
+
+Run options: --seed 47911
+
+# Running:
+
+......
+
+Finished in 0.001543s, 3887.4707 runs/s, 11014.5002 assertions/s.
+
+6 runs, 17 assertions, 0 failures, 0 errors, 0 skips
+
 
 
 
